@@ -1,0 +1,124 @@
+/*
+ * Switchery 0.8.2
+ * https://abpetkov.github.io/switchery/
+ * Forked from https://github.com/abpetkov/switchery
+ * License: The MIT License (MIT)
+ */
+.switchery {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 7px;
+    width: 44px;
+    height: 20px;
+    background-color: #64bd63;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.switchery small {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: block;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.switchery input {
+    display: none !important;
+}
+
+.switchery>small:before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border-radius: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: left 0.3s, background 0.3s, box-shadow 0.1s;
+}
+
+.switchery>small.switchery-small {
+    width: 30px;
+    height: 10px;
+    border-radius: 20px;
+}
+
+.switchery>small.switchery-small:before {
+    width: 10px;
+    height: 10px;
+    top: 0;
+    left: 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.switchery>small.switchery-large {
+    width: 60px;
+    height: 30px;
+    border-radius: 30px;
+}
+
+.switchery>small.switchery-large:before {
+    width: 20px;
+    height: 20px;
+    top: 5px;
+    left: 5px;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+}
+
+.switchery>small.switchery-large+span {
+    margin-left: 65px;
+}
+
+.switchery>small.switchery-large+span.switchery-left {
+    margin-left: 0;
+    margin-right: 65px;
+}
+
+.switchery>small+span {
+    margin-left: 49px;
+}
+
+.switchery>small.switchery-small+span {
+    margin-left: 34px;
+}
+
+.switchery>small.switchery-small+span.switchery-left {
+    margin-left: 0;
+    margin-right: 34px;
+}
+
+.switchery>input:checked+small {
+    background-color: #ffffff;
+}
+
+.switchery>input:checked+small:before {
+    left: 22px;
+    background-color: #009688;
+}
+
+.switchery>input:checked+small.switchery-small:before {
+    left: 5px;
+}
+
+.switchery>input:checked+small.switchery-large:before {
+    left: 38px;
+}
+
+.switchery>input:disabled+small {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.switchery>input:disabled+small:before {
+    background-color: #d9d9d9;
+    box-shadow: none;
+}
